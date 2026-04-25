@@ -1,0 +1,61 @@
+air_conditioners:
+  living_room_ac_1:
+    power: false
+    target_temperature: 26
+    fan_speed: auto
+    mode: cool
+  bedroom_ac_1:
+    power: false
+    target_temperature: 26
+    fan_speed: auto
+    mode: sleep
+lights:
+  living_room_main:
+    power: false
+    brightness: 70
+    group: living_room
+  bedroom_lamp:
+    power: false
+    brightness: 40
+    group: bedroom
+music_player:
+  power: false
+  playlist: quiet_focus
+  volume: 20
+fans:
+  living_room_fan_1:
+    power: false
+    speed: medium
+    oscillate: true
+    group: living_room
+  bedroom_fan_1:
+    power: false
+    speed: low
+    oscillate: false
+    group: bedroom
+covers:
+  living_room_curtain:
+    position: open
+    group: living_room
+  bedroom_blinds:
+    position: half
+    group: bedroom
+locks:
+  front_door_lock:
+    locked: true
+    group: entry
+switches:
+  air_purifier:
+    power: false
+    mode: auto
+    group: living_room
+  bedroom_humidifier:
+    power: false
+    mode: sleep
+    group: bedroom
+appliances:
+  robot_vacuum_1:
+    power: false
+    mode: idle
+    status: docked
+    group: living_room

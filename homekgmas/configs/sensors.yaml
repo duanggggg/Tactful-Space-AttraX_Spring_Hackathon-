@@ -1,0 +1,8 @@
+﻿room_temperature_c: 27.5
+bedroom_temperature_c: 26.0
+ambient_light_level: 30
+occupancy:
+  living_room: true
+  bedroom: false
+time_of_day: evening
+quiet_hours: false

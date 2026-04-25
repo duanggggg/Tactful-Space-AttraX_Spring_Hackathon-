@@ -1,0 +1,9 @@
+﻿project_name: homekgmas
+api_prefix: /api/v1
+compression_window: 4
+memory_top_k: 3
+primary_memory_backend: triple_graph
+agent_mode: fusion
+simulator_mode: embedded
+simulator_api_base: http://127.0.0.1:8011
+simulator_request_timeout_seconds: 5.0

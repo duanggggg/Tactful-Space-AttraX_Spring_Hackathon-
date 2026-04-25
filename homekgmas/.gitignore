@@ -1,0 +1,54 @@
+# 数据文件
+data_raw/
+data_staging/
+data_processed/
+outputs/
+*.parquet
+*.csv
+*.zip
+*.pkl
+*.jsonl
+*.json
+*.xlsx
+*.xls
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.yarn/cache/
+dist/
+build/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 可执行文件
+*.exe
+*.msi
+*.dmg
+
+# 其他
+.env
+.env.local
+*.log

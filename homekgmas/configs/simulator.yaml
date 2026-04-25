@@ -1,0 +1,10 @@
+start_time: "2026-04-10T18:00:00+08:00"
+time_scale_minutes_per_real_second: 3.0
+random_seed: 7
+outdoor:
+  weather: clear
+  outdoor_temperature_c: 29.0
+  outdoor_light_level: 72
+  humidity_pct: 64
+  wind_speed_mps: 2.8
+  cloud_cover_pct: 18

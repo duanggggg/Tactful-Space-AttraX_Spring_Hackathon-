@@ -1,0 +1,28 @@
+# Python 3.10+ is recommended. Python 3.9 also needs eval_type_backport
+# because the codebase uses modern type syntax that Pydantic evaluates.
+
+# Runtime API and orchestration
+fastapi>=0.115,<1.0
+uvicorn>=0.30,<1.0
+pydantic>=2.8,<3.0
+httpx>=0.27,<1.0
+PyYAML>=6.0,<7.0
+
+# Data pipeline and evaluation
+numpy>=1.26,<3.0
+pandas>=2.2,<3.0
+pyarrow>=16.0,<22.0
+datasets>=2.20,<4.0
+tqdm>=4.66,<5.0
+
+# Dataset download helpers
+huggingface_hub>=0.24,<1.0
+
+# Figure/report generation
+matplotlib>=3.8,<4.0
+Pillow>=10.4,<12.0
+
+# Test tooling
+pytest>=8.0,<9.0
+
+eval_type_backport>=0.2,<1.0; python_version < "3.10"
