@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House Detail View</title>
+    <style>
+      html,
+      body,
+      #root {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #08111f;
+      }
+
+      body {
+        font-family: "Inter", "Segoe UI", sans-serif;
+      }
+
+      canvas {
+        display: block;
+      }
+
+      .back-link {
+        position: fixed;
+        top: 18px;
+        left: 18px;
+        z-index: 20;
+        padding: 10px 14px;
+        color: rgba(228, 241, 255, 0.92);
+        text-decoration: none;
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        background: rgba(9, 18, 32, 0.58);
+        border: 1px solid rgba(128, 177, 232, 0.22);
+        border-radius: 999px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 18px rgba(76, 148, 235, 0.12);
+      }
+
+      .detail-label {
+        position: fixed;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+        z-index: 20;
+        color: rgba(168, 198, 230, 0.82);
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        pointer-events: none;
+      }
+
+      /* dat.gui — 对齐 Attrax Dashboard 风格
+         注意：位置相关的属性不能用 !important，否则 JS 拖拽写入的 inline style 会被盖掉 */
+      .dg.ac {
+        top: 50%;
+        right: 18px;
+        bottom: auto;
+        left: auto;
+        transform: translateY(-50%);
+        z-index: 45;
+        font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+      }
+      .dg.main,
+      .dg.main.a {
+        background: rgba(10, 22, 42, 0.78) !important;
+        border: 1px solid rgba(120, 196, 255, 0.28) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 0 22px rgba(80, 176, 255, 0.18),
+                    inset 0 0 18px rgba(120, 196, 255, 0.06) !important;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        color: rgba(206, 232, 255, 0.96) !important;
+        overflow: hidden !important;
+        /* 宽度保持 dat.gui 默认（245），否则会挤压控件导致显示不全 */
+      }
+      .dg li.title {
+        background: linear-gradient(135deg, rgba(110, 189, 255, 0.18), rgba(157, 216, 255, 0.04)) !important;
+        border-bottom: 1px solid rgba(120, 196, 255, 0.22) !important;
+        color: rgba(157, 216, 255, 0.95) !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.14em !important;
+        text-transform: uppercase !important;
+        font-size: 12px !important;
+        padding-left: 14px !important;
+      }
+      .dg li:not(.folder) {
+        background: transparent !important;
+        border-bottom: 1px solid rgba(120, 196, 255, 0.08) !important;
+      }
+      .dg li.cr:hover {
+        background: rgba(30, 58, 98, 0.55) !important;
+      }
+      .dg .property-name {
+        color: rgba(168, 198, 230, 0.82) !important;
+        font-size: 13px !important;
+        letter-spacing: 0.04em;
+      }
+      .dg .cr.number input[type="text"],
+      .dg .cr.string input[type="text"] {
+        background: rgba(6, 14, 28, 0.75) !important;
+        color: rgba(206, 232, 255, 0.96) !important;
+        border: 1px solid rgba(120, 196, 255, 0.22) !important;
+        border-radius: 4px !important;
+        font-size: 13px !important;
+      }
+      .dg .c .slider {
+        background: rgba(18, 34, 62, 0.85) !important;
+        border-radius: 3px !important;
+      }
+      .dg .c .slider-fg {
+        background: #6ebdff !important;
+        box-shadow: 0 0 6px rgba(110, 189, 255, 0.55);
+      }
+      .dg .c select {
+        background: rgba(6, 14, 28, 0.75) !important;
+        color: rgba(206, 232, 255, 0.96) !important;
+        border: 1px solid rgba(120, 196, 255, 0.22) !important;
+        border-radius: 4px !important;
+      }
+      .dg .cr.function .property-name {
+        color: rgba(157, 216, 255, 0.92) !important;
+        font-weight: 500;
+      }
+      .dg.main .close-button {
+        background: rgba(20, 38, 68, 0.85) !important;
+        border-top: 1px solid rgba(120, 196, 255, 0.2) !important;
+        color: rgba(157, 216, 255, 0.9) !important;
+        letter-spacing: 0.22em !important;
+        text-transform: uppercase !important;
+        font-size: 11px !important;
+        height: 28px !important;
+        line-height: 28px !important;
+      }
+      .dg.main .close-button:hover {
+        background: rgba(30, 58, 98, 0.95) !important;
+        color: rgba(206, 232, 255, 0.96) !important;
+      }
+      .dg.main.taller-than-window .close-button {
+        border-top: 1px solid rgba(120, 196, 255, 0.2) !important;
+      }
+      .dg .cr.boolean input[type="checkbox"] {
+        accent-color: #6ebdff;
+      }
+      .dg .save-row {
+        background: rgba(20, 38, 68, 0.85) !important;
+        border-bottom: 1px solid rgba(120, 196, 255, 0.2) !important;
+      }
+      .dg .save-row .button {
+        background: rgba(110, 189, 255, 0.18) !important;
+        color: rgba(157, 216, 255, 0.95) !important;
+        border: 1px solid rgba(140, 216, 255, 0.35) !important;
+        border-radius: 4px !important;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 11px !important;
+      }
+      .dg .save-row .button:hover {
+        background: rgba(110, 189, 255, 0.3) !important;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body class="house-detail-page">
+    <div id="root"></div>
+    <a class="back-link" href="./index.html">Back To City</a>
+    <div class="detail-label">House Detail View</div>
+    <script src="https://cdn.jsdelivr.net/npm/dat.gui@0.7.9/build/dat.gui.min.js"></script>
+    <script type="module" src="./house-detail.js"></script>
+    <script type="module" src="./dashboard-panel.js"></script>
+  </body>
+</html>

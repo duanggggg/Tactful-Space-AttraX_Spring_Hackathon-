@@ -1,0 +1,45 @@
+{
+  "session_id": "20260325_091055_75djrf",
+  "agent_id": "default",
+  "created_at": "2026-03-25T09:10:55.816180",
+  "updated_at": "2026-03-25T09:10:55.826545",
+  "status": "error",
+  "messages": [
+    {
+      "role": "user",
+      "content": "123",
+      "timestamp": "2026-03-25T09:10:55.818196"
+    },
+    {
+      "role": "assistant",
+      "content": "Agent 服务未配置 OPENAI_API_KEY，当前无法执行真实推理。",
+      "timestamp": "2026-03-25T09:10:55.824064"
+    }
+  ],
+  "tool_calls": [],
+  "context_injection": {
+    "control_files": [
+      "AGENTS.md",
+      "SOUL.md",
+      "IDENTITY.md",
+      "USER.md",
+      "TOOLS.md",
+      "BOOTSTRAP.md",
+      "MEMORY.md"
+    ],
+    "memory_files": [],
+    "assets": [],
+    "notes": "full memory concatenation"
+  },
+  "decision_log": [
+    {
+      "summary": "Agent 服务未配置 OPENAI_API_KEY，当前无法执行真实推理。",
+      "artifact_paths": [],
+      "timestamp": "2026-03-25T09:10:55.826046"
+    }
+  ],
+  "artifacts": [],
+  "memory_commits": [
+    "/Users/fengdefan/Documents/GitHub/pipelineLLM-main/backend/.openclaw/workspace-default/memory/timeline/2026-03-25.md"
+  ]
+}

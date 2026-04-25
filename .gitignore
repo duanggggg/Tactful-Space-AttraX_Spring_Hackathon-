@@ -1,0 +1,47 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.yarn/cache/
+dist/
+build/
+__pycache__
+.pyc
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+*~
+.DS_Store
+._*
+
+# 可执行文件和安装器
+*.exe
+*.msi
+*.dmg
+*.app/
+
+# 其他
+.env
+.env.local
+*.log
+.git/
+__MACOSX/
+screen-display.zip
+download_glb/
+screen-display/screen-display/.gitattributes
+screen-display/screen-display/.layout_backups/

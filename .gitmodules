@@ -1,0 +1,3 @@
+[submodule "homekgmas"]
+	path = homekgmas
+	url = https://github.com/fengdefan/homekgmas.git

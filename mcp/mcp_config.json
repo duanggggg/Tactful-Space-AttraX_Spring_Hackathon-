@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "local-stdio-calculator": {
+      "type": "stdio",
+      "command": "./.venv/Scripts/python.exe",
+      "args": ["-m", "calculator"]
+    },
+    "local-llm-agent": {
+      "type": "stdio",
+      "command": "./.venv/Scripts/python.exe",
+      "args": ["llm_agent.py"],
+      "description": "MCP LLM Agent - 与本地大模型接口通信"
+    },
+    "remote-sse-server": {
+      "type": "sse",
+      "url": "https://api.example.com/sse",
+      "disabled": true
+    },
+    "remote-http-server": {
+      "type": "http",
+      "url": "https://api.example.com/mcp",
+      "disabled": true
+    }
+  }
+}

@@ -1,0 +1,666 @@
+﻿{
+    "task_id":  "task-65f687ce",
+    "status":  "accepted",
+    "user_view":  {
+                      "summary":  "Prepared a coordinated afternoon scene plan with 5 selected device change(s).",
+                      "reasons":  [
+                                      "Applied moderated cooling to keep the living room comfortable.",
+                                      "Adjusted lighting to match the requested scene and visibility needs.",
+                                      "Avoided unnecessary device changes outside the selected scene actions."
+                                  ],
+                      "actions":  [
+                                      "Set living_room_main.power to True.",
+                                      "Set living_room_main brightness to 65%.",
+                                      "Set living_room_ac_1.power to True.",
+                                      "Set living_room_ac_1 target temperature to 25 C.",
+                                      "Set living_room_ac_1.fan_speed to medium."
+                                  ],
+                      "success":  true,
+                      "scene_label":  "Afternoon scene"
+                  },
+    "selected_agents":  [
+                            "lighting_agent",
+                            "switch_agent",
+                            "music_agent",
+                            "cooling_agent",
+                            "cover_agent",
+                            "appliance_agent"
+                        ],
+    "wakeup_scores":  {
+                          "lighting_agent":  6,
+                          "switch_agent":  4,
+                          "music_agent":  4,
+                          "cooling_agent":  4,
+                          "cover_agent":  2,
+                          "appliance_agent":  2,
+                          "lock_agent":  0,
+                          "fan_agent":  0
+                      },
+    "agent_dialogue":  [
+                           {
+                               "round_index":  1,
+                               "agent_name":  "lighting_agent",
+                               "turn_type":  "proposal",
+                               "summary":  "Lighting recommendation prepared from time-of-day and ambience cues.",
+                               "rationale":  [
+                                                 "Prefers scene-setting and atmospheric lighting.",
+                                                 "Loaded 3 relevant memory record(s)."
+                                             ],
+                               "concerns":  [
+
+                                            ],
+                               "validation_feedback":  [
+
+                                                       ],
+                               "actions":  [
+                                               {
+                                                   "action_id":  "action-22c0669a",
+                                                   "device_id":  "living_room_main",
+                                                   "attribute":  "power",
+                                                   "value":  true,
+                                                   "reason":  "Ambient light is low enough to justify illumination",
+                                                   "requested_by":  "lighting_agent",
+                                                   "priority":  "medium",
+                                                   "decision_reason":  ""
+                                               },
+                                               {
+                                                   "action_id":  "action-230809d1",
+                                                   "device_id":  "living_room_main",
+                                                   "attribute":  "brightness",
+                                                   "value":  65,
+                                                   "reason":  "ambiance-first lighting choice",
+                                                   "requested_by":  "lighting_agent",
+                                                   "priority":  "medium",
+                                                   "decision_reason":  ""
+                                               }
+                                           ]
+                           },
+                           {
+                               "round_index":  1,
+                               "agent_name":  "switch_agent",
+                               "turn_type":  "proposal",
+                               "summary":  "Switch-device recommendation prepared from air-quality and comfort cues.",
+                               "rationale":  [
+                                                 "Balances air quality support with energy use.",
+                                                 "Loaded 3 relevant memory record(s)."
+                                             ],
+                               "concerns":  [
+
+                                            ],
+                               "validation_feedback":  [
+
+                                                       ],
+                               "actions":  [
+
+                                           ]
+                           },
+                           {
+                               "round_index":  1,
+                               "agent_name":  "music_agent",
+                               "turn_type":  "proposal",
+                               "summary":  "Music recommendation prepared from scene and policy cues.",
+                               "rationale":  [
+                                                 "Uses music when it supports the current task context.",
+                                                 "Loaded 3 relevant memory record(s)."
+                                             ],
+                               "concerns":  [
+
+                                            ],
+                               "validation_feedback":  [
+
+                                                       ],
+                               "actions":  [
+
+                                           ]
+                           },
+                           {
+                               "round_index":  1,
+                               "agent_name":  "cooling_agent",
+                               "turn_type":  "proposal",
+                               "summary":  "Cooling recommendation prepared from temperature and occupancy context.",
+                               "rationale":  [
+                                                 "Balances comfort with moderate energy usage.",
+                                                 "Loaded 3 relevant memory record(s)."
+                                             ],
+                               "concerns":  [
+                                                "High cooling may conflict with energy-saving goals."
+                                            ],
+                               "validation_feedback":  [
+
+                                                       ],
+                               "actions":  [
+                                               {
+                                                   "action_id":  "action-511e441d",
+                                                   "device_id":  "living_room_ac_1",
+                                                   "attribute":  "power",
+                                                   "value":  true,
+                                                   "reason":  "Living room appears warm and occupied",
+                                                   "requested_by":  "cooling_agent",
+                                                   "priority":  "high",
+                                                   "decision_reason":  ""
+                                               },
+                                               {
+                                                   "action_id":  "action-dcd7e9d3",
+                                                   "device_id":  "living_room_ac_1",
+                                                   "attribute":  "target_temperature",
+                                                   "value":  24,
+                                                   "reason":  "balanced cooling target",
+                                                   "requested_by":  "cooling_agent",
+                                                   "priority":  "medium",
+                                                   "decision_reason":  ""
+                                               },
+                                               {
+                                                   "action_id":  "action-e4ac3896",
+                                                   "device_id":  "living_room_ac_1",
+                                                   "attribute":  "fan_speed",
+                                                   "value":  "medium",
+                                                   "reason":  "Moderate airflow for current comfort target",
+                                                   "requested_by":  "cooling_agent",
+                                                   "priority":  "medium",
+                                                   "decision_reason":  ""
+                                               },
+                                               {
+                                                   "action_id":  "action-a11e7d63",
+                                                   "device_id":  "living_room_ac_1",
+                                                   "attribute":  "mode",
+                                                   "value":  "cool",
+                                                   "reason":  "Explicitly keep the climate system in cooling mode",
+                                                   "requested_by":  "cooling_agent",
+                                                   "priority":  "low",
+                                                   "decision_reason":  ""
+                                               }
+                                           ]
+                           },
+                           {
+                               "round_index":  1,
+                               "agent_name":  "cover_agent",
+                               "turn_type":  "proposal",
+                               "summary":  "Cover recommendation prepared from daylight and privacy cues.",
+                               "rationale":  [
+                                                 "Balances daylight, privacy, and scene needs.",
+                                                 "Loaded 3 relevant memory record(s)."
+                                             ],
+                               "concerns":  [
+
+                                            ],
+                               "validation_feedback":  [
+
+                                                       ],
+                               "actions":  [
+
+                                           ]
+                           },
+                           {
+                               "round_index":  1,
+                               "agent_name":  "appliance_agent",
+                               "turn_type":  "proposal",
+                               "summary":  "Appliance recommendation prepared from task and occupancy cues.",
+                               "rationale":  [
+                                                 "Uses appliance actions when they fit the task and occupancy context.",
+                                                 "Loaded 3 relevant memory record(s)."
+                                             ],
+                               "concerns":  [
+
+                                            ],
+                               "validation_feedback":  [
+
+                                                       ],
+                               "actions":  [
+
+                                           ]
+                           },
+                           {
+                               "round_index":  2,
+                               "agent_name":  "lighting_agent",
+                               "turn_type":  "revision",
+                               "summary":  "Lighting proposal revised after coordination feedback.",
+                               "rationale":  [
+                                                 "Adjusted brightness to better fit the shared scene constraints."
+                                             ],
+                               "concerns":  [
+                                                "Brightness was revised in response to discussion conflicts."
+                                            ],
+                               "validation_feedback":  [
+
+                                                       ],
+                               "actions":  [
+                                               {
+                                                   "action_id":  "action-bb26d414",
+                                                   "device_id":  "living_room_main",
+                                                   "attribute":  "power",
+                                                   "value":  true,
+                                                   "reason":  "Ambient light is low enough to justify illumination",
+                                                   "requested_by":  "lighting_agent",
+                                                   "priority":  "medium",
+                                                   "decision_reason":  ""
+                                               },
+                                               {
+                                                   "action_id":  "action-fc250713",
+                                                   "device_id":  "living_room_main",
+                                                   "attribute":  "brightness",
+                                                   "value":  65,
+                                                   "reason":  "ambiance-first lighting choice",
+                                                   "requested_by":  "lighting_agent",
+                                                   "priority":  "medium",
+                                                   "decision_reason":  ""
+                                               }
+                                           ]
+                           },
+                           {
+                               "round_index":  2,
+                               "agent_name":  "switch_agent",
+                               "turn_type":  "revision",
+                               "summary":  "Switch-device recommendation prepared from air-quality and comfort cues.",
+                               "rationale":  [
+                                                 "Balances air quality support with energy use.",
+                                                 "Loaded 3 relevant memory record(s)."
+                                             ],
+                               "concerns":  [
+
+                                            ],
+                               "validation_feedback":  [
+
+                                                       ],
+                               "actions":  [
+
+                                           ]
+                           },
+                           {
+                               "round_index":  2,
+                               "agent_name":  "music_agent",
+                               "turn_type":  "revision",
+                               "summary":  "Music recommendation prepared from scene and policy cues.",
+                               "rationale":  [
+                                                 "Uses music when it supports the current task context.",
+                                                 "Loaded 3 relevant memory record(s)."
+                                             ],
+                               "concerns":  [
+
+                                            ],
+                               "validation_feedback":  [
+
+                                                       ],
+                               "actions":  [
+
+                                           ]
+                           },
+                           {
+                               "round_index":  2,
+                               "agent_name":  "cooling_agent",
+                               "turn_type":  "revision",
+                               "summary":  "Cooling proposal revised after coordination feedback.",
+                               "rationale":  [
+                                                 "Adjusted cooling aggressiveness to reduce coordination conflicts."
+                                             ],
+                               "concerns":  [
+                                                "Cooling was softened to better align with shared constraints."
+                                            ],
+                               "validation_feedback":  [
+
+                                                       ],
+                               "actions":  [
+                                               {
+                                                   "action_id":  "action-ccc27ff7",
+                                                   "device_id":  "living_room_ac_1",
+                                                   "attribute":  "power",
+                                                   "value":  true,
+                                                   "reason":  "Living room appears warm and occupied",
+                                                   "requested_by":  "cooling_agent",
+                                                   "priority":  "high",
+                                                   "decision_reason":  ""
+                                               },
+                                               {
+                                                   "action_id":  "action-30b7f588",
+                                                   "device_id":  "living_room_ac_1",
+                                                   "attribute":  "target_temperature",
+                                                   "value":  25,
+                                                   "reason":  "balanced cooling target",
+                                                   "requested_by":  "cooling_agent",
+                                                   "priority":  "medium",
+                                                   "decision_reason":  ""
+                                               },
+                                               {
+                                                   "action_id":  "action-b13b797f",
+                                                   "device_id":  "living_room_ac_1",
+                                                   "attribute":  "fan_speed",
+                                                   "value":  "medium",
+                                                   "reason":  "Moderate airflow for current comfort target",
+                                                   "requested_by":  "cooling_agent",
+                                                   "priority":  "medium",
+                                                   "decision_reason":  ""
+                                               }
+                                           ]
+                           },
+                           {
+                               "round_index":  2,
+                               "agent_name":  "cover_agent",
+                               "turn_type":  "revision",
+                               "summary":  "Cover recommendation prepared from daylight and privacy cues.",
+                               "rationale":  [
+                                                 "Balances daylight, privacy, and scene needs.",
+                                                 "Loaded 3 relevant memory record(s)."
+                                             ],
+                               "concerns":  [
+
+                                            ],
+                               "validation_feedback":  [
+
+                                                       ],
+                               "actions":  [
+
+                                           ]
+                           },
+                           {
+                               "round_index":  2,
+                               "agent_name":  "appliance_agent",
+                               "turn_type":  "revision",
+                               "summary":  "Appliance recommendation prepared from task and occupancy cues.",
+                               "rationale":  [
+                                                 "Uses appliance actions when they fit the task and occupancy context.",
+                                                 "Loaded 3 relevant memory record(s)."
+                                             ],
+                               "concerns":  [
+
+                                            ],
+                               "validation_feedback":  [
+
+                                                       ],
+                               "actions":  [
+
+                                           ]
+                           }
+                       ],
+    "plan":  {
+                 "task_id":  "task-65f687ce",
+                 "selected_actions":  [
+                                          {
+                                              "action_id":  "action-bb26d414",
+                                              "device_id":  "living_room_main",
+                                              "attribute":  "power",
+                                              "value":  true,
+                                              "reason":  "Ambient light is low enough to justify illumination",
+                                              "requested_by":  "lighting_agent",
+                                              "priority":  "medium",
+                                              "decision_reason":  "Selected for the coordinated plan by lighting_agent."
+                                          },
+                                          {
+                                              "action_id":  "action-fc250713",
+                                              "device_id":  "living_room_main",
+                                              "attribute":  "brightness",
+                                              "value":  65,
+                                              "reason":  "ambiance-first lighting choice",
+                                              "requested_by":  "lighting_agent",
+                                              "priority":  "medium",
+                                              "decision_reason":  "Selected for the coordinated plan by lighting_agent."
+                                          },
+                                          {
+                                              "action_id":  "action-ccc27ff7",
+                                              "device_id":  "living_room_ac_1",
+                                              "attribute":  "power",
+                                              "value":  true,
+                                              "reason":  "Living room appears warm and occupied",
+                                              "requested_by":  "cooling_agent",
+                                              "priority":  "high",
+                                              "decision_reason":  "Selected for the coordinated plan by cooling_agent."
+                                          },
+                                          {
+                                              "action_id":  "action-30b7f588",
+                                              "device_id":  "living_room_ac_1",
+                                              "attribute":  "target_temperature",
+                                              "value":  25,
+                                              "reason":  "balanced cooling target",
+                                              "requested_by":  "cooling_agent",
+                                              "priority":  "medium",
+                                              "decision_reason":  "Selected for the coordinated plan by cooling_agent."
+                                          },
+                                          {
+                                              "action_id":  "action-b13b797f",
+                                              "device_id":  "living_room_ac_1",
+                                              "attribute":  "fan_speed",
+                                              "value":  "medium",
+                                              "reason":  "Moderate airflow for current comfort target",
+                                              "requested_by":  "cooling_agent",
+                                              "priority":  "medium",
+                                              "decision_reason":  "Selected for the coordinated plan by cooling_agent."
+                                          }
+                                      ],
+                 "rejected_actions":  [
+
+                                      ],
+                 "rationale":  [
+                                   "Applied moderated cooling to keep the living room comfortable.",
+                                   "Adjusted lighting to match the requested scene and visibility needs.",
+                                   "Avoided unnecessary device changes outside the selected scene actions.",
+                                   "Brightness was revised in response to discussion conflicts.",
+                                   "High cooling may conflict with energy-saving goals."
+                               ],
+                 "conflicts":  [
+                                   "High cooling may conflict with energy-saving goals.",
+                                   "Brightness was revised in response to discussion conflicts."
+                               ],
+                 "decision_confidence":  0.6,
+                 "consensus_level":  "medium",
+                 "policy_checks_passed":  [
+                                              "action_schema_valid",
+                                              "deduplicated_device_targets"
+                                          ]
+             },
+    "conflicts":  [
+                      "High cooling may conflict with energy-saving goals.",
+                      "Brightness was revised in response to discussion conflicts."
+                  ],
+    "compression":  {
+                        "rolling_summary":  [
+                                                "Music_agent: Music recommendation prepared from scene and policy cues.",
+                                                "Cooling_agent: Cooling proposal revised after coordination feedback.",
+                                                "Cover_agent: Cover recommendation prepared from daylight and privacy cues.",
+                                                "Appliance_agent: Appliance recommendation prepared from task and occupancy cues."
+                                            ],
+                        "open_conflicts":  [
+                                               "Brightness was revised in response to discussion conflicts."
+                                           ],
+                        "accepted_decisions":  [
+                                                   "Cooling_agent proposed 3 action(s)."
+                                               ],
+                        "rejected_options":  [
+
+                                             ],
+                        "pending_questions":  [
+                                                  "Should conflicts trigger another negotiation round?"
+                                              ]
+                    },
+    "execution":  {
+                      "success":  true,
+                      "applied_actions":  [
+                                              {
+                                                  "action_id":  "action-bb26d414",
+                                                  "device_id":  "living_room_main",
+                                                  "attribute":  "power",
+                                                  "value":  true,
+                                                  "reason":  "Ambient light is low enough to justify illumination",
+                                                  "requested_by":  "lighting_agent",
+                                                  "priority":  "medium",
+                                                  "decision_reason":  "Selected for the coordinated plan by lighting_agent.",
+                                                  "status":  "applied",
+                                                  "applied_at":  "2026-04-25T09:11:27.924902+00:00",
+                                                  "failure_reason":  ""
+                                              },
+                                              {
+                                                  "action_id":  "action-fc250713",
+                                                  "device_id":  "living_room_main",
+                                                  "attribute":  "brightness",
+                                                  "value":  65,
+                                                  "reason":  "ambiance-first lighting choice",
+                                                  "requested_by":  "lighting_agent",
+                                                  "priority":  "medium",
+                                                  "decision_reason":  "Selected for the coordinated plan by lighting_agent.",
+                                                  "status":  "applied",
+                                                  "applied_at":  "2026-04-25T09:11:27.924902+00:00",
+                                                  "failure_reason":  ""
+                                              },
+                                              {
+                                                  "action_id":  "action-ccc27ff7",
+                                                  "device_id":  "living_room_ac_1",
+                                                  "attribute":  "power",
+                                                  "value":  true,
+                                                  "reason":  "Living room appears warm and occupied",
+                                                  "requested_by":  "cooling_agent",
+                                                  "priority":  "high",
+                                                  "decision_reason":  "Selected for the coordinated plan by cooling_agent.",
+                                                  "status":  "applied",
+                                                  "applied_at":  "2026-04-25T09:11:27.924902+00:00",
+                                                  "failure_reason":  ""
+                                              },
+                                              {
+                                                  "action_id":  "action-30b7f588",
+                                                  "device_id":  "living_room_ac_1",
+                                                  "attribute":  "target_temperature",
+                                                  "value":  25,
+                                                  "reason":  "balanced cooling target",
+                                                  "requested_by":  "cooling_agent",
+                                                  "priority":  "medium",
+                                                  "decision_reason":  "Selected for the coordinated plan by cooling_agent.",
+                                                  "status":  "applied",
+                                                  "applied_at":  "2026-04-25T09:11:27.924902+00:00",
+                                                  "failure_reason":  ""
+                                              },
+                                              {
+                                                  "action_id":  "action-b13b797f",
+                                                  "device_id":  "living_room_ac_1",
+                                                  "attribute":  "fan_speed",
+                                                  "value":  "medium",
+                                                  "reason":  "Moderate airflow for current comfort target",
+                                                  "requested_by":  "cooling_agent",
+                                                  "priority":  "medium",
+                                                  "decision_reason":  "Selected for the coordinated plan by cooling_agent.",
+                                                  "status":  "applied",
+                                                  "applied_at":  "2026-04-25T09:11:27.924902+00:00",
+                                                  "failure_reason":  ""
+                                              }
+                                          ],
+                      "state_snapshot":  {
+                                             "sensors":  {
+                                                             "room_temperature_c":  27.0,
+                                                             "bedroom_temperature_c":  27.3,
+                                                             "room_humidity_pct":  56,
+                                                             "ambient_light_level":  71,
+                                                             "occupancy":  {
+                                                                               "living_room":  true,
+                                                                               "bedroom":  false
+                                                                           },
+                                                             "current_time":  "2026-04-11T15:08:23.280000+08:00",
+                                                             "time_of_day":  "afternoon",
+                                                             "quiet_hours":  false
+                                                         },
+                                             "devices":  {
+                                                             "air_conditioners":  {
+                                                                                      "living_room_ac_1":  {
+                                                                                                               "power":  true,
+                                                                                                               "target_temperature":  25,
+                                                                                                               "fan_speed":  "medium",
+                                                                                                               "mode":  "cool"
+                                                                                                           },
+                                                                                      "bedroom_ac_1":  {
+                                                                                                           "power":  false,
+                                                                                                           "target_temperature":  26,
+                                                                                                           "fan_speed":  "auto",
+                                                                                                           "mode":  "sleep"
+                                                                                                       }
+                                                                                  },
+                                                             "lights":  {
+                                                                            "living_room_main":  {
+                                                                                                     "power":  true,
+                                                                                                     "brightness":  65,
+                                                                                                     "color":  "neutral",
+                                                                                                     "mode":  "static",
+                                                                                                     "group":  "living_room"
+                                                                                                 },
+                                                                            "bedroom_lamp":  {
+                                                                                                 "power":  false,
+                                                                                                 "brightness":  40,
+                                                                                                 "color":  "neutral",
+                                                                                                 "mode":  "static",
+                                                                                                 "group":  "bedroom"
+                                                                                             }
+                                                                        },
+                                                             "music_player":  {
+                                                                                  "power":  false,
+                                                                                  "playlist":  "quiet_focus",
+                                                                                  "volume":  20,
+                                                                                  "input_source":  "home",
+                                                                                  "brightness":  50,
+                                                                                  "equalizer":  "balanced",
+                                                                                  "media_track":  1
+                                                                              },
+                                                             "fans":  {
+                                                                          "living_room_fan_1":  {
+                                                                                                    "power":  false,
+                                                                                                    "speed":  "medium",
+                                                                                                    "oscillate":  true,
+                                                                                                    "group":  "living_room"
+                                                                                                },
+                                                                          "bedroom_fan_1":  {
+                                                                                                "power":  false,
+                                                                                                "speed":  "low",
+                                                                                                "oscillate":  false,
+                                                                                                "group":  "bedroom"
+                                                                                            }
+                                                                      },
+                                                             "covers":  {
+                                                                            "living_room_curtain":  {
+                                                                                                        "position":  "open",
+                                                                                                        "group":  "living_room"
+                                                                                                    },
+                                                                            "bedroom_blinds":  {
+                                                                                                   "position":  "half",
+                                                                                                   "group":  "bedroom"
+                                                                                               }
+                                                                        },
+                                                             "locks":  {
+                                                                           "front_door_lock":  {
+                                                                                                   "locked":  true,
+                                                                                                   "armed":  false,
+                                                                                                   "alarm_volume":  50,
+                                                                                                   "group":  "entry"
+                                                                                               }
+                                                                       },
+                                                             "switches":  {
+                                                                              "air_purifier":  {
+                                                                                                   "power":  false,
+                                                                                                   "mode":  "auto",
+                                                                                                   "humidity":  50,
+                                                                                                   "group":  "living_room"
+                                                                                               },
+                                                                              "bedroom_humidifier":  {
+                                                                                                         "power":  false,
+                                                                                                         "mode":  "sleep",
+                                                                                                         "humidity":  50,
+                                                                                                         "group":  "bedroom"
+                                                                                                     }
+                                                                          },
+                                                             "appliances":  {
+                                                                                "robot_vacuum_1":  {
+                                                                                                       "power":  false,
+                                                                                                       "mode":  "idle",
+                                                                                                       "status":  "docked",
+                                                                                                       "group":  "living_room"
+                                                                                                   }
+                                                                            }
+                                                         },
+                                             "outdoor":  {
+                                                             "weather":  "clear",
+                                                             "outdoor_temperature_c":  29.7,
+                                                             "outdoor_light_level":  56,
+                                                             "humidity_pct":  56,
+                                                             "wind_speed_mps":  2.5,
+                                                             "cloud_cover_pct":  22
+                                                         }
+                                         },
+                      "notes":  [
+                                    "Executed against the dynamic home simulator",
+                                    "Simulator backend: EmbeddedSimulatorBackend"
+                                ]
+                  },
+    "memory_record_id":  "task-65f687ce-demo",
+    "created_at":  "2026-04-25T09:11:27.968834+00:00"
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "input": "客户要来看 demo，准备一下",
+    "voice": "好，客厅主灯 亮度 65%。",
+    "actions": 2
+  },
+  {
+    "input": "Welcome a client coming for a demo, prepare bright clean meeting environment",
+    "voice": "调好啦：客厅主灯 亮度 65%、扫地机器人 quick模式。",
+    "actions": 5
+  },
+  {
+    "input": "Dim the lights and play soft jazz for movie time",
+    "voice": "好，客厅主灯 亮度 65%。",
+    "actions": 2
+  },
+  {
+    "input": "Set focus mode for emails",
+    "voice": "好，客厅主灯 亮度 65%。",
+    "actions": 2
+  },
+  {
+    "input": "我有点烦躁",
+    "voice": "好，客厅主灯 亮度 65%。",
+    "actions": 2
+  }
+]
